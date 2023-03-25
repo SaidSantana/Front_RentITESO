@@ -1,9 +1,12 @@
 const { Schema, model } = require('mongoose');
 
-const equipoSchema = new Schema({  //Modificar el esquema 
+const equipoSchema = new Schema({  
     //_id: { type: Schema.Types.ObjectId },
-    name: { type: String },
-    status: { type: String, default: 'new' },
+    nombre: { type: String },
+    status: { type: String },
+    cantidad: { type: Number },
+    //imagen
+    descripción: { type: String }
 });
 
 module.exports = model('equipos', equipoSchema);

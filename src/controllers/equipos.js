@@ -19,16 +19,25 @@ class ControladorEquipos{
             .catch(err => {
                 res.sendStatus(400);
             })
-    }    
+    }
+    
+    /*static consultarNombre(req, res){
+        Equipo.find({nombre: req.params.nombre})
+            .then(equipo => {
+                res.send(equipo);
+            })
+            .catch(err => {
+                res.sendStatus(400);
+            })
+    }*/
 
     static postEquipo(req, res){
-        //console.log(req.body); pendienteeeeeeeeeee
-        const equipo = new Tarea({
-            _id: req.body.id,
-            title: req.body.title,
-            description: req.body.description,
+        console.log(req.body);
+        const equipo = new Equipo({ //hacer un get por NOMBRE
+            nombre: req.body.nombre,
             status: req.body.status,
-            Date: req.body.Date
+            cantidad: req.body.cantidad,
+            descripcion: req.body.descripcion
         });
         equipo.save()
             .then(equipoGuardado => {
