@@ -1,1 +1,0 @@
-# Repositorio para el proyecto PAE llamado RentITESO
