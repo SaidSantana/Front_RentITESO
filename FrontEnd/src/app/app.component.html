@@ -1,3 +1,6 @@
-<app-header></app-header>
+<div *ngIf="isNotLoginPage()">
+    <app-header></app-header>
+</div>
 <app-tabs></app-tabs>
+<router-outlet></router-outlet>
 <app-footer class="footer"></app-footer>

@@ -6,9 +6,11 @@ import { EspaciosComponent } from './pages/espacios/espacios.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HistoriaComponent } from './pages/historia/historia.component';
 import { RegistroComponent } from './pages/registro/registro.component';
+import { HomeLoginComponent } from './pages/home-login/home-login.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'equipo', pathMatch: 'full'},
+  { path: '', redirectTo: 'login', pathMatch: 'full'},
+  { path: 'login', component: HomeLoginComponent},
   { path: 'equipo', component: EquipoComponent},
   { path: 'espacios', component: EspaciosComponent},
   { path: 'historia', component: HistoriaComponent},

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { HistoriaComponent } from './pages/historia/historia.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { MaterialModule } from './modules/material/material.module';
+import { HomeLoginComponent } from './pages/home-login/home-login.component';
 
 
 @NgModule({
@@ -25,13 +27,16 @@ import { MaterialModule } from './modules/material/material.module';
     EspaciosComponent,
     HistoriaComponent,
     NotFoundComponent,
-    RegistroComponent
+    RegistroComponent,
+    HomeLoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
