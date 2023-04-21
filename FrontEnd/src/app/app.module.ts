@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { RegistroComponent } from './pages/registro/registro.component';
 import { MaterialModule } from './modules/material/material.module';
 import { HomeLoginComponent } from './pages/home-login/home-login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { UsersService } from './shared/services/users.service';
 
 
 @NgModule({
@@ -38,9 +40,10 @@ import { ProfileComponent } from './pages/profile/profile.component';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
