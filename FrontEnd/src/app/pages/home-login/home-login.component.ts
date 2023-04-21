@@ -24,7 +24,7 @@ export class HomeLoginComponent {
   }
 
   logIn(){
-    this.router.navigate(['/equipos']);
+    this.router.navigate(['/equipo']);
     console.log(this.correo);
   }
   

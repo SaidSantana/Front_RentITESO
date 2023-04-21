@@ -7,6 +7,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HistoriaComponent } from './pages/historia/historia.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { HomeLoginComponent } from './pages/home-login/home-login.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'espacios', component: EspaciosComponent},
   { path: 'historia', component: HistoriaComponent},
   { path: 'registro', component: RegistroComponent},
+  { path: 'perfil', component: ProfileComponent},
   { path: '**', component: NotFoundComponent}
 ];;
 

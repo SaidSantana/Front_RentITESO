@@ -15,6 +15,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { MaterialModule } from './modules/material/material.module';
 import { HomeLoginComponent } from './pages/home-login/home-login.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { HomeLoginComponent } from './pages/home-login/home-login.component';
     HistoriaComponent,
     NotFoundComponent,
     RegistroComponent,
-    HomeLoginComponent
+    HomeLoginComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
