@@ -1,5 +1,6 @@
 const express = require('express');
-const router = require('./src/routes')
+const router = require('./src/routes');
+const cors = require('cors');
 
 //Database connection with mongoose
 const mongoose = require('mongoose');
@@ -25,6 +26,8 @@ mongoose.connect(mongoUrl, {useUnifiedTopology: true}).then(() => {
 
 const swaggerDocs = swaggerJsdoc(swaggerConfig);
 app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+
+app.use(cors());
 
 app.use('',router);
 
