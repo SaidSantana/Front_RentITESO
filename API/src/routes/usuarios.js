@@ -47,21 +47,23 @@ router.get('/:id',usersController.getUser);
  *          required: 
  *            - nombre
  *            - apellido
+ *            - password
  *            - email
  *            - rol
  *            - image
- *            - date
  *          properties:
  *            nombre:
  *              type: string
  *            apellido:
  *              type: string
+ *            password:
+ *              type: string
  *            email:
+ *              type: string
+ *            rol:
  *              type: string
  *            image: 
  *              type: string
- *            date:
- *              type: date
  *    responses:
  *      200: 
  *        description: User created successfully

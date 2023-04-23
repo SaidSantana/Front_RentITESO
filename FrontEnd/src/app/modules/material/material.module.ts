@@ -12,6 +12,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatTableModule } from '@angular/material/table';
+import { MatSelectModule } from '@angular/material/select';
 
 
 
@@ -31,7 +33,9 @@ import { MatDividerModule } from '@angular/material/divider';
     MatFormFieldModule,
     MatCardModule,
     MatInputModule,
-    MatDividerModule
+    MatDividerModule,
+    MatTableModule,
+    MatSelectModule
   ]
 })
 export class MaterialModule { }
