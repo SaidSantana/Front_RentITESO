@@ -8,6 +8,8 @@ import { HistoriaComponent } from './pages/historia/historia.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { HomeLoginComponent } from './pages/home-login/home-login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { RegisterUserComponent } from './pages/register-user/register-user.component';
+import { UsersComponent } from './pages/users/users.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -15,8 +17,10 @@ const routes: Routes = [
   { path: 'equipo', component: EquipoComponent},
   { path: 'espacios', component: EspaciosComponent},
   { path: 'historia', component: HistoriaComponent},
-  { path: 'registro', component: RegistroComponent},
   { path: 'perfil', component: ProfileComponent},
+  { path: 'registro', component: RegisterUserComponent},
+  { path: 'usuarios', component: UsersComponent},
+  { path: 'usuarios/editar/:id', component: RegisterUserComponent},
   { path: '**', component: NotFoundComponent}
 ];;
 
