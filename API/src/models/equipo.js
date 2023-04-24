@@ -5,8 +5,7 @@ const equipoSchema = new Schema({
     nombre: { type: String },
     status: { type: String },
     cantidad: { type: Number },
-    //imagen
-    descripción: { type: String }
+    imagen: {type: String }
 });
 
 module.exports = model('equipos', equipoSchema);
