@@ -37,7 +37,7 @@ class ControladorEquipos{
             nombre: req.body.nombre,
             status: req.body.status,
             cantidad: req.body.cantidad,
-            descripcion: req.body.descripcion
+            imagen: req.body.imagen
         });
         equipo.save()
             .then(equipoGuardado => {
@@ -61,7 +61,7 @@ class ControladorEquipos{
     static deleteEquipo(req, res){
         Equipo.findByIdAndDelete(req.params.id)
             .then(equipo => {
-                res.send(equipo);
+                res.send("Equipo " + equipo.nombre + "eliminado");
             })
             .catch(err => {
                 res.sendStatus(400);
