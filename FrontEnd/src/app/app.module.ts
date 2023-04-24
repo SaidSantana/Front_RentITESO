@@ -18,6 +18,8 @@ import { MaterialModule } from './modules/material/material.module';
 import { HomeLoginComponent } from './pages/home-login/home-login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { UsersService } from './shared/services/users.service';
+import { RegisterUserComponent } from './pages/register-user/register-user.component';
+import { UsersComponent } from './pages/users/users.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { UsersService } from './shared/services/users.service';
     NotFoundComponent,
     RegistroComponent,
     HomeLoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    RegisterUserComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
