@@ -26,7 +26,8 @@ class ControladorEspacios{
         const espacio = new Espacio({ 
             nombre: req.body.nombre,
             status: req.body.status,
-            descripcion: req.body.descripcion
+            image: req.body.image,
+            stock: req.body.stock
         });
         espacio.save()
             .then(espacioGuardado => {
@@ -50,7 +51,7 @@ class ControladorEspacios{
     static deleteEspacio(req, res){
         Espacio.findByIdAndDelete(req.params.id)
             .then(espacio => {
-                res.send(espacio);
+                res.send("Espacio " + espacio.nombre + "eliminado.");
             })
             .catch(err => {
                 res.sendStatus(400);
