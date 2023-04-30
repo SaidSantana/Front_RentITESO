@@ -23,18 +23,18 @@
             <form [formGroup]="formLogin" class="example-form" (submit)="logIn()">
               <mat-form-field  class="example-full-width">
                 <mat-label for="correo">Correo electrónico</mat-label>
-                <input [(ngModel)]="correo" type="email" name="correo" formControlName="correo" matInput placeholder="...@iteso.mx" value="">
+                <input [(ngModel)]="credenciales.correo" type="email" name="correo" formControlName="correo" matInput placeholder="...@iteso.mx" value="">
               </mat-form-field>
             
               <mat-form-field class="example-full-width">
                 <mat-label for="contrasenia">Contraseña</mat-label>
-                <input [(ngModel)]="password" type="password" name="contrasenia" formControlName="password" matInput>
+                <input [(ngModel)]="credenciales.password" type="password" name="contrasenia" formControlName="password" matInput>
               </mat-form-field>
               <div class="ingresar"><button mat-raised-button color="primary">Ingresar</button></div>
             </form>
-            <div class="" *ngIf="formLogin.invalid">
+            <!-- <div class="" *ngIf="formLogin.invalid">
               Formulario invalido
-            </div> 
+            </div>  -->
         </mat-card>
     </div>
 </div>

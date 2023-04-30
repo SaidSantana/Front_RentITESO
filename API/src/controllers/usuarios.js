@@ -2,6 +2,15 @@ const Usuario = require('./../models/usuario');
 
 class userController{
 
+    static logIn(req,res){
+        res.send({token:'123'});
+        return;
+        /**Logica para
+         * buscar en base de datos y retornar token
+         */
+    }
+
+
     static getUsers(req, res){
         Usuario.find({}).lean({})
             .then(users => {

@@ -10,18 +10,20 @@ import { HomeLoginComponent } from './pages/home-login/home-login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RegisterUserComponent } from './pages/register-user/register-user.component';
 import { UsersComponent } from './pages/users/users.component';
+import { LoggedGuard } from './shared/guards/logged.guard';
+import { AuthGuard } from './shared/guards/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
-  { path: 'login', component: HomeLoginComponent},
-  { path: 'equipo', component: EquipoComponent},
-  { path: 'espacios', component: EspaciosComponent},
-  { path: 'historia', component: HistoriaComponent},
-  { path: 'perfil', component: ProfileComponent},
-  { path: 'registro', component: RegisterUserComponent},
-  { path: 'usuarios', component: UsersComponent},
-  { path: 'usuarios/editar/:id', component: RegisterUserComponent},
-  { path: '**', component: NotFoundComponent}
+  { path: 'login', component: HomeLoginComponent, canActivate: [LoggedGuard]},
+  { path: 'equipo', component: EquipoComponent, canActivate: [AuthGuard]},
+  { path: 'espacios', component: EspaciosComponent, canActivate: [AuthGuard] },
+  { path: 'historia', component: HistoriaComponent, canActivate: [AuthGuard]},
+  { path: 'perfil', component: ProfileComponent, canActivate: [AuthGuard]},
+  { path: 'registro', component: RegisterUserComponent, canActivate: [AuthGuard]},
+  { path: 'usuarios', component: UsersComponent, canActivate: [AuthGuard]},
+  { path: 'usuarios/editar/:id', component: RegisterUserComponent, canActivate: [AuthGuard]},
+  { path: '**', component: NotFoundComponent, canActivate: [AuthGuard]} //Solución temporal
 ];;
 
 @NgModule({
