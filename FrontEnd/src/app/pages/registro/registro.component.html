@@ -1,1 +1,33 @@
-<p>registro1 works!</p>
+<div class="form">
+    <mat-card>
+        <mat-card-content>Gracias por registrarte a RentITESO</mat-card-content>
+        <form class="formRegister" [formGroup]="formRegister" (submit)="registro()">
+          <mat-form-field class="example-full-width">
+            <mat-label for="nombre">Nombre</mat-label>
+            <input [(ngModel)]="user.nombre" matInput type="text" name="nombre" formControlName="nombre">
+          </mat-form-field>
+          <mat-form-field  class="example-full-width">
+            <mat-label for="apellido">Apellido</mat-label>
+            <input [(ngModel)]="user.apellido" matInput type="text" name="apellido" formControlName="apellido">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label for="correo">Correo</mat-label>
+            <input [(ngModel)]="user.email" matInput type="email" name="correo" placeholder="...@iteso.mx" formControlName="email" >
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label for="password">Password</mat-label>
+            <input [(ngModel)]="user.password" matInput type="password" name="password" formControlName="password">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label for="confirmPassword">Confirm password</mat-label>
+            <input [(ngModel)]="confirmPassword" matInput type="password" name="password" formControlName="password">
+          </mat-form-field>
+          <div class="ingresar"><button mat-raised-button color="primary" [disabled]="!passwordMatch()">Registrarse</button></div>
+        </form>
+        <!-- <div class="" *ngIf="formRegister.invalid">
+          Formulario invalido
+        </div>  -->
+    </mat-card>
+    <br>
+    <button mat-raised-button color="secondary" routerLink="/login">Regresar a inicio de sesion</button>
+</div>
