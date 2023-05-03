@@ -34,10 +34,13 @@ export class HomeLoginComponent {
   }
 
   logIn(){
+    console.log(this.credenciales);
     if (this.formLogin.invalid){
+      console.log('Couldnt pass this point')
       return;
     }
     this.loginService.logIn(this.credenciales).subscribe((response: Token) => {
+      console.log('successful')
       this.authService.setToken(response.token);
       this.router.navigate(['/equipo']);
     })

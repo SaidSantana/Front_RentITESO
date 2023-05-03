@@ -15,6 +15,11 @@ export class AppComponent {
   isNotLoginPage(): boolean{
     return (this.router.url !== '/login');
   }
+
+  isNotRegisterPage(): boolean{
+    return (this.router.url !== '/registro');
+  }
+
   // isRouteValid(): boolean {
   //   const url = this.router.url;
   //   const isRouteValid = this.router.config.some(route => url.includes(route.path!));
