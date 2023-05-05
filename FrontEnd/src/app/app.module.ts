@@ -21,6 +21,10 @@ import { UsersService } from './shared/services/users.service';
 import { RegisterUserComponent } from './pages/register-user/register-user.component';
 import { UsersComponent } from './pages/users/users.component';
 
+import { SocialLoginModule, SocialAuthServiceConfig, GoogleSigninButtonModule} from '@abacritt/angularx-social-login';
+
+import { GoogleLoginProvider } from '@abacritt/angularx-social-login'
+
 
 @NgModule({
   declarations: [
@@ -45,9 +49,29 @@ import { UsersComponent } from './pages/users/users.component';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SocialLoginModule,
+    GoogleSigninButtonModule
   ],
-  providers: [UsersService],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '264879683267-spjp2jpn7vqorbodu9n6s7mjgf24rn7l.apps.googleusercontent.com'
+            )
+          }
+        ],
+        onError: (err) => {
+          console.error(err);
+        }
+      } as SocialAuthServiceConfig,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

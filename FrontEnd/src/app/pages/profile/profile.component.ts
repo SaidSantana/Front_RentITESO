@@ -1,6 +1,10 @@
+import { Token } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/shared/Interface/user';
+import { AuthService } from 'src/app/shared/services/auth.service';
 import { UsersService } from 'src/app/shared/services/users.service';
+
+import jwtDecode from 'jwt-decode';
 
 @Component({
   selector: 'app-profile',
@@ -10,15 +14,18 @@ import { UsersService } from 'src/app/shared/services/users.service';
 export class ProfileComponent {
 
   user!: User;
+  token!: string;
 
-  constructor(private usersService: UsersService){}
+  constructor(private usersService: UsersService, private authService: AuthService){}
 
   ngOnInit(){
-    this.bringUser();
+    this.token = this.authService.getToken() as string;
+    this.bringUser(this.token);
   }
 
-  bringUser(){
-    this.usersService.getUser('641e31abc712f3d079e52e8e').subscribe((user: User) => {
+  bringUser(token: string){
+    const decodedToken: any = jwtDecode(token);
+    this.usersService.getUser(decodedToken._id).subscribe((user: User) => {
       this.user = user;
     });
     //console.log(this.user.apellido)

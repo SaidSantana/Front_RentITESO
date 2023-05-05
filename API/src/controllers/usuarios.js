@@ -5,6 +5,12 @@ const Usuario = require('./../models/usuario');
 const Token = require('./../models/token');
 require('dotenv').config();
 
+const { OAuth2Client } = require('google-auth-library');
+
+const googleId = process.env.GOOGLE_CLIENT;
+
+const googleCLient = new OAuth2Client(googleId);
+
 
 class userController{
 
@@ -39,6 +45,51 @@ class userController{
         .catch(err => console.log(err));
     }
 
+    static loginGoogle(req, res){
+        const idToken = req.body.idToken;
+
+        googleCLient.verifyIdToken({
+            idToken
+        })
+        .then(response => {
+            const dataUser = response.getPayload();
+            console.log(dataUser);
+            Usuario.findOne({email: dataUser.email})
+            .then(usuario => {
+                if (usuario){
+                    const data = {
+                        _id: usuario._id,
+                        email: usuario.email
+                    }
+                    const key = process.env.PRIVATE_KEY;
+                    const token = jwt.sign(data,key);
+                    
+                    Token.create({
+                        token,
+                        userId: usuario._id
+                    }).then(tokenResponse => {
+                        res.send({
+                            token
+                        })
+                    })
+                }else{
+                    Usuario.create({
+                        nombre: dataUser.given_name,
+                        apellido: dataUser.family_name,
+                        email: dataUser.email,
+                        image: dataUser.picture
+                    })
+                    .then(res.send({msg: "Gracias por el registro, vuelve a iniciar sesion"}))
+                    .catch(err => res.status(400).send(err));
+                }
+            })
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(401).send({msg: 'Invalid token'});
+        })
+    }
+
     static registro(req,res){
         console.log(req.body);
         bcrypt.hash(req.body.password,10).then(hashedPassword => {
@@ -53,18 +104,6 @@ class userController{
         .catch(err => {
             res.status(400).send(err);
         })
-
-
-        // Usuario.create({
-        //     nombre: req.body.nombre,
-        //     apellido: req.body.apellido,
-        //     email: req.body.email,
-        //     password: jwt.sign({a:1}, req.body.password)
-        // })
-        // .then(() => res.send({msg: "Gracias por registrarte"}))
-        // .catch((err) => {
-        //     res.status(400).send(err);
-        // })
     }
 
     static getUsers(req, res){

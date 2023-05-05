@@ -1,6 +1,9 @@
 //Se quitó la posicion, cuando se agregue contenido 
 footer {
     position:fixed;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
     bottom: 0;
     left: 0;
     width: 100%;

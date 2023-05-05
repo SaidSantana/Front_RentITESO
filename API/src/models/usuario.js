@@ -8,7 +8,7 @@ const usuarioSchema = new Schema({
     email: {type: String},
     password: {type: String},
     rol: {type: String, default: 'Usuario'},
-    image: {type: String, default: 'https://upload.wikimedia.org/wikipedia/commons/d/db/Logo_ITESO_normal.jpg'},
+    image: {type: String, default: 'https://seeklogo.com/images/I/iteso-logo-F97B48CC66-seeklogo.com.png'},
     date: {type: Date, default: now}
 });
 
