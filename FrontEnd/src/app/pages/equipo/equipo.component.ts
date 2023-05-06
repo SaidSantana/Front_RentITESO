@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Equipo } from 'src/app/shared/Interface/equipo';
 import { EquiposService } from 'src/app/shared/services/equipos.service';
 
@@ -12,8 +13,6 @@ export class EquipoComponent implements OnInit{
   selectedEquipo: any;
   selectedEquipoId: any;
 
-  show: any;
-
   usuario: number = 0; //temporal, implementar la verificacion con la info del usuario
 
   equipo: Equipo = {
@@ -23,7 +22,7 @@ export class EquipoComponent implements OnInit{
     imagen: ''
   };
 
-  constructor(private equiposService: EquiposService){ }
+  constructor(private equiposService: EquiposService, private router: Router){ }
 
   ngOnInit(): void {
       this.equiposService.getEquipos().subscribe(equipos => {
@@ -39,35 +38,9 @@ export class EquipoComponent implements OnInit{
     });
   }
 
-  updateEquipo(equipo: any) {
-    this.selectedEquipo = equipo;
-    this.selectedEquipoId = equipo._id;
+  updateEquipo(id: number) {
+    this.router.navigate(['/actualizar', id]);
   }
 
-  submitUpdate() {
-    this.equiposService.putEquipo(this.selectedEquipoId, this.selectedEquipo).subscribe(() => {
-      alert('Equipo actualizado exitosamente');
-    });
-  }
-
-  closeForm(): void {
-    this.selectedEquipoId = null;
-    this.show = false;
-  }
-
-  crearEquipo() {
-    this.equiposService.postEquipo(this.equipo).subscribe(
-      res => {
-        alert('Equipo creado exitosamente')
-      },
-      err => {
-        // hacer algo en caso de error
-      }
-    );
-  }
-
-  showForm() {
-    this.show = true;
-  }
 
 }

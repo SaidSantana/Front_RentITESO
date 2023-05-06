@@ -23,7 +23,9 @@ import { UsersComponent } from './pages/users/users.component';
 
 import { SocialLoginModule, SocialAuthServiceConfig, GoogleSigninButtonModule} from '@abacritt/angularx-social-login';
 
-import { GoogleLoginProvider } from '@abacritt/angularx-social-login'
+import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
+import { CreateComponent } from './pages/create/create.component';
+import { UpdateComponent } from './pages/update/update.component'
 
 
 @NgModule({
@@ -40,7 +42,9 @@ import { GoogleLoginProvider } from '@abacritt/angularx-social-login'
     HomeLoginComponent,
     ProfileComponent,
     RegisterUserComponent,
-    UsersComponent
+    UsersComponent,
+    CreateComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,
