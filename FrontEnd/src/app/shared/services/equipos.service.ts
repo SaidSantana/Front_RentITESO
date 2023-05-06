@@ -15,6 +15,11 @@ export class EquiposService {
     return this.http.get<any>(url);
   }
 
+  getEquipo(equipoId: string): Observable<any> {
+    const url: string = `http://localhost:4000/equipos/${equipoId}`;
+    return this.http.get<any>(url);
+  }
+
   deleteEquipos(equipoId: string): Observable<any>{
     const url: string = `http://localhost:4000/equipos/${equipoId}`;
     return this.http.delete<any>(url);

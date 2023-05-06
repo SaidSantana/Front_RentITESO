@@ -12,12 +12,16 @@ import { RegisterUserComponent } from './pages/register-user/register-user.compo
 import { UsersComponent } from './pages/users/users.component';
 import { LoggedGuard } from './shared/guards/logged.guard';
 import { AuthGuard } from './shared/guards/auth.guard';
+import { CreateComponent } from './pages/create/create.component';
+import { UpdateComponent } from './pages/update/update.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
   { path: 'login', component: HomeLoginComponent, canActivate: [LoggedGuard]},
   { path: 'registro', component: RegistroComponent, canActivate: [LoggedGuard] },
   { path: 'equipo', component: EquipoComponent, canActivate: [AuthGuard]},
+  { path: 'crear', component: CreateComponent,  canActivate: [AuthGuard]},
+  { path: 'actualizar/:id', component: UpdateComponent, canActivate: [AuthGuard] },
   { path: 'espacios', component: EspaciosComponent, canActivate: [AuthGuard] },
   { path: 'historia', component: HistoriaComponent, canActivate: [AuthGuard]},
   { path: 'perfil', component: ProfileComponent, canActivate: [AuthGuard]},
