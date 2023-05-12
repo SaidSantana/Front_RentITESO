@@ -4,10 +4,10 @@ import { EquiposService } from 'src/app/shared/services/equipos.service';
 
 @Component({
   selector: 'app-update',
-  templateUrl: './update.component.html',
-  styleUrls: ['./update.component.scss']
+  templateUrl: './update_eq.component.html',
+  styleUrls: ['./update_eq.component.scss']
 })
-export class UpdateComponent implements OnInit{
+export class UpdateEqComponent implements OnInit{
 
   selectedEquipo: any;
   selectedEquipoId: any;

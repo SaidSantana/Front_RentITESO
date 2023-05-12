@@ -24,9 +24,10 @@ import { UsersComponent } from './pages/users/users.component';
 import { SocialLoginModule, SocialAuthServiceConfig, GoogleSigninButtonModule} from '@abacritt/angularx-social-login';
 
 import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
-import { CreateComponent } from './pages/create/create.component';
-import { UpdateComponent } from './pages/update/update.component'
-
+import { CreateEqComponent } from './pages/create_eq/create_eq.component';
+import { CreateEsComponent } from './pages/create_es/create_es.component';
+import { UpdateEqComponent } from './pages/update_eq/update_eq.component'
+import { UpdateEsComponent } from './pages/update_es/update_es.component'
 
 @NgModule({
   declarations: [
@@ -43,8 +44,10 @@ import { UpdateComponent } from './pages/update/update.component'
     ProfileComponent,
     RegisterUserComponent,
     UsersComponent,
-    CreateComponent,
-    UpdateComponent
+    CreateEqComponent,
+    CreateEsComponent,
+    UpdateEqComponent,
+    UpdateEsComponent
   ],
   imports: [
     BrowserModule,

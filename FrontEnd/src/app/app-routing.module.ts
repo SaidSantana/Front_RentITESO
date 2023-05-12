@@ -11,17 +11,21 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { RegisterUserComponent } from './pages/register-user/register-user.component';
 import { UsersComponent } from './pages/users/users.component';
 import { LoggedGuard } from './shared/guards/logged.guard';
-import { AuthGuard } from './shared/guards/auth.guard';
-import { CreateComponent } from './pages/create/create.component';
-import { UpdateComponent } from './pages/update/update.component';
+import { AuthGuard } from './shared/guards/auth.guard';7
+import { CreateEqComponent } from './pages/create_eq/create_eq.component';
+import { CreateEsComponent } from './pages/create_es/create_es.component';
+import { UpdateEqComponent } from './pages/update_eq/update_eq.component';
+import { UpdateEsComponent } from './pages/update_es/update_es.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
   { path: 'login', component: HomeLoginComponent, canActivate: [LoggedGuard]},
   { path: 'registro', component: RegistroComponent, canActivate: [LoggedGuard] },
   { path: 'equipo', component: EquipoComponent, canActivate: [AuthGuard]},
-  { path: 'crear', component: CreateComponent,  canActivate: [AuthGuard]},
-  { path: 'actualizar/:id', component: UpdateComponent, canActivate: [AuthGuard] },
+  { path: 'crear_eq', component: CreateEqComponent,  canActivate: [AuthGuard]},
+  { path: 'crear_es', component: CreateEsComponent,  canActivate: [AuthGuard]},
+  { path: 'actualizar_eq/:id', component: UpdateEqComponent, canActivate: [AuthGuard] },
+  { path: 'actualizar_es/:id', component: UpdateEsComponent, canActivate: [AuthGuard] },
   { path: 'espacios', component: EspaciosComponent, canActivate: [AuthGuard] },
   { path: 'historia', component: HistoriaComponent, canActivate: [AuthGuard]},
   { path: 'perfil', component: ProfileComponent, canActivate: [AuthGuard]},

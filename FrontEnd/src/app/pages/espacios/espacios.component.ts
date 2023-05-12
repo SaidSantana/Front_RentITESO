@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 import { Espacio } from 'src/app/shared/Interface/espacio';
 import { EspaciosService } from 'src/app/shared/services/espacios.service';
 
@@ -24,7 +24,7 @@ export class EspaciosComponent implements OnInit{
     stock: 0
     };
 
-    constructor(private espaciosService: EspaciosService){ }
+    constructor(private espaciosService: EspaciosService,private router: Router){ }
 
   ngOnInit(): void {
       this.espaciosService.getEspacios().subscribe(espacios => {
@@ -40,35 +40,7 @@ export class EspaciosComponent implements OnInit{
     });
   }
 
-  updateEspacio(espacio: any) {
-    this.selectedEspacio = espacio;
-    this.selectedEspacioId = espacio._id;
+  updateEspacio(id: number) {
+    this.router.navigate(['/actualizar_es', id]);
   }
-
-  submitUpdate() {
-    this.espaciosService.putEspacio(this.selectedEspacioId, this.selectedEspacio).subscribe(() => {
-      alert('Espacio actualizado exitosamente.');
-    });
-  }
-
-  closeForm(): void {
-    this.selectedEspacioId = null;
-    this.show = false;
-  }
-
-  crearEspacio() {
-    this.espaciosService.postEspacio(this.espacio).subscribe(
-      res => {
-        alert('Espacio creado exitosamente')
-      },
-      err => {
-        // hacer algo en caso de error
-      }
-    );
-  }
-
-  showForm() {
-    this.show = true;
-  }
-
 }
