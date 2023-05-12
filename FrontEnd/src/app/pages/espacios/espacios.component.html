@@ -14,8 +14,8 @@
             </mat-card-content>
             <mat-card-actions>
             <button mat-button>LIKE</button>
-            <button mat-button (click)="eliminarEspacio(espacio._id)" data-id="{{ espacio._id }}" *ngIf="usuario === 0">Eliminate</button>
-            <button mat-button (click)="updateEspacio(espacio._id)"  *ngIf="usuario === 0">Update</button>
+            <button mat-button *ngIf="user.rol==='Admin'" (click)="eliminarEspacio(espacio._id)" data-id="{{ espacio._id }}" >Eliminate</button>
+            <button mat-button *ngIf="user.rol==='Admin'" (click)="updateEspacio(espacio._id)">Update</button>
             </mat-card-actions>
         </mat-card>
     </div>
@@ -23,7 +23,7 @@
 
 
 <div class="botton">
-    <button mat-raised-button color="primary"  *ngIf="usuario === 0" routerLink="/crear_es">New</button>
+    <button mat-raised-button color="primary"  *ngIf="user.rol==='Admin'" routerLink="/crear_es">New</button>
 </div>
   
   
