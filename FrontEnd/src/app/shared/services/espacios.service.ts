@@ -15,6 +15,11 @@ export class EspaciosService {
     return this.http.get<any>(url);
   }
 
+  getEspacio(espacioId: string): Observable<any> {
+    const url: string = `http://localhost:4000/espacios/${espacioId}`;
+    return this.http.get<any>(url);
+  }
+
   deleteEspacios(espacioId: string): Observable<any> {
     const url: string = `http://localhost:4000/espacios/${espacioId}`;
     return this.http.delete<any>(url);

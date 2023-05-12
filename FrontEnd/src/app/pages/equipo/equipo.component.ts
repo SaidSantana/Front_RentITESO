@@ -39,7 +39,7 @@ export class EquipoComponent implements OnInit{
   }
 
   updateEquipo(id: number) {
-    this.router.navigate(['/actualizar', id]);
+    this.router.navigate(['/actualizar_eq', id]);
   }
 
 
