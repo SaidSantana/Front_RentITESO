@@ -24,7 +24,8 @@ import { UsersComponent } from './pages/users/users.component';
 import { SocialLoginModule, SocialAuthServiceConfig, GoogleSigninButtonModule} from '@abacritt/angularx-social-login';
 
 import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
-import { CreateComponent } from './pages/create/create.component';
+import { CreateEqComponent } from './pages/create_eq/create_eq.component';
+import { CreateEsComponent } from './pages/create_es/create_es.component';
 import { UpdateComponent } from './pages/update/update.component'
 
 
@@ -43,7 +44,8 @@ import { UpdateComponent } from './pages/update/update.component'
     ProfileComponent,
     RegisterUserComponent,
     UsersComponent,
-    CreateComponent,
+    CreateEqComponent,
+    CreateEsComponent,
     UpdateComponent
   ],
   imports: [

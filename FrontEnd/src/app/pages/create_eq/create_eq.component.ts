@@ -5,10 +5,10 @@ import { EquiposService } from 'src/app/shared/services/equipos.service';
 
 @Component({
   selector: 'app-create',
-  templateUrl: './create.component.html',
-  styleUrls: ['./create.component.scss']
+  templateUrl: './create_eq.component.html',
+  styleUrls: ['./create_eq.component.scss']
 })
-export class CreateComponent {
+export class CreateEqComponent {
 
   equipo: Equipo = {
     nombre: '',
