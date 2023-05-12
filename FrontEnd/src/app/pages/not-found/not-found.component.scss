@@ -1,0 +1,44 @@
+// Variables
+$background-color: #f2f2f2;
+$error-color: #1100ff;
+$font-family: 'Helvetica Neue', sans-serif;
+$button-background-color: #007bff;
+$button-color: #fff;
+$button-hover-color: #fff;
+$button-hover-background-color: #0069d9;
+
+// Estilos para el cuerpo de la página
+body {
+  background-color: $background-color;
+  font-family: $font-family;
+}
+
+// Estilos para el mensaje de error
+.error-message {
+  color: $error-color;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+// Estilos para el botón de regreso
+.back-button {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  background-color: $button-background-color;
+  color: $button-color;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+
+  &:hover {
+    background-color: $button-hover-background-color;
+    color: $button-hover-color;
+  }
+}
