@@ -1,6 +1,8 @@
 const express = require('express');
 const router = require('./src/routes');
 const cors = require('cors');
+const socketio = require('socket.io');
+
 
 //Database connection with mongoose
 const mongoose = require('mongoose');
@@ -17,11 +19,30 @@ const app = express();
 
 const mongoUrl = process.env.MONGO_URL;
 
+
+
 mongoose.connect(mongoUrl, {useUnifiedTopology: true}).then(() => {
     console.log('Successfully connected to DataBase')
-    app.listen(port, () => {
+    const server = app.listen(port, () => {
         console.log('app is running in port '+port);
     });
+
+    const io = socketio(server,{
+        cors: {
+            origin: '*'
+        }
+    });
+
+    io.on('connection', (socket) => {
+        console.log('Alguien se conecto');
+        
+        socket.on('nuevoMensaje', (mensaje) => {
+            console.log('Llego el mensaje '+mensaje);
+            socket.broadcast.emit('mensajeRecibido', mensaje);
+        })
+    }
+    );
+
 }).catch(err => console.log("Couldn't connect to Database"));
 
 const swaggerDocs = swaggerJsdoc(swaggerConfig);

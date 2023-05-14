@@ -16,6 +16,8 @@ import { CreateEqComponent } from './pages/create_eq/create_eq.component';
 import { CreateEsComponent } from './pages/create_es/create_es.component';
 import { UpdateEqComponent } from './pages/update_eq/update_eq.component';
 import { UpdateEsComponent } from './pages/update_es/update_es.component';
+import { ChatSupportComponent } from './pages/chat-support/chat-support.component';
+import { AdminsGuard } from './shared/guards/admins.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -24,14 +26,15 @@ const routes: Routes = [
   { path: 'equipo', component: EquipoComponent, canActivate: [AuthGuard]},
   { path: 'crear_eq', component: CreateEqComponent,  canActivate: [AuthGuard]},
   { path: 'crear_es', component: CreateEsComponent,  canActivate: [AuthGuard]},
+  { path: 'soporte', component: ChatSupportComponent, canActivate: [AuthGuard] },
   { path: 'actualizar_eq/:id', component: UpdateEqComponent, canActivate: [AuthGuard] },
   { path: 'actualizar_es/:id', component: UpdateEsComponent, canActivate: [AuthGuard] },
   { path: 'espacios', component: EspaciosComponent, canActivate: [AuthGuard] },
   { path: 'historia', component: HistoriaComponent, canActivate: [AuthGuard]},
   { path: 'perfil', component: ProfileComponent, canActivate: [AuthGuard]},
-  { path: 'usuarios/registro', component: RegisterUserComponent, canActivate: [AuthGuard]},
-  { path: 'usuarios', component: UsersComponent, canActivate: [AuthGuard]},
-  { path: 'usuarios/editar/:id', component: RegisterUserComponent, canActivate: [AuthGuard]},
+  { path: 'usuarios/registro', component: RegisterUserComponent, canActivate: [AuthGuard,AdminsGuard]},
+  { path: 'usuarios', component: UsersComponent, canActivate: [AuthGuard,AdminsGuard]},
+  { path: 'usuarios/editar/:id', component: RegisterUserComponent, canActivate: [AuthGuard,AdminsGuard]},
   { path: '**', component: NotFoundComponent, canActivate: [AuthGuard]} //Solución temporal
 ];;
 

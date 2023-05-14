@@ -6,7 +6,7 @@
             <mat-label for="nombre">Nombre</mat-label>
             <input [(ngModel)]="user.nombre" matInput type="text" name="nombre" formControlName="nombre">
           </mat-form-field>
-          <mat-form-field  class="example-full-width" *ngIf="!edit">
+          <mat-form-field  class="example-full-width">
             <mat-label for="apellido">Apellido</mat-label>
             <input [(ngModel)]="user.apellido" matInput type="text" name="apellido" formControlName="apellido">
           </mat-form-field>
@@ -14,11 +14,11 @@
             <mat-label for="correo">Correo</mat-label>
             <input [(ngModel)]="user.email" matInput type="email" name="correo" placeholder="...@iteso.mx" formControlName="email" >
           </mat-form-field>
-          <mat-form-field class="example-full-width">
+          <mat-form-field class="example-full-width" *ngIf="!edit">
             <mat-label for="password">Password</mat-label>
             <input [(ngModel)]="user.password" matInput type="password" name="password" formControlName="password">
           </mat-form-field>
-          <mat-form-field appearance="fill" *ngIf="!edit">
+          <mat-form-field appearance="fill">
             <mat-label>Seleccionar Rol</mat-label>
             <mat-select [(ngModel)]="user.rol" formControlName="rol">
               <mat-option value="Admin">Admin</mat-option>

@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
+import jwtDecode from 'jwt-decode';
+
+
 @Injectable({
   providedIn: 'root'
 })

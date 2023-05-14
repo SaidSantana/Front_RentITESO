@@ -17,13 +17,16 @@ class userController{
     static logIn(req,res){
         Usuario.findOne({email: req.body.correo})
         .then(usuario => {
-            if(!usuario)
-               res.status(401).send({msg: "Incorrecto"});
+            if(!usuario){
+                res.status(401).send({msg: "Incorrecto"});
+            }
             //console.log(usuario);
             bcrypt.compare(req.body.password, usuario.password)
             .then(passwordOk => {
                 if(!passwordOk){
-                    res.status(401).send({msg: "Incorrecto"})
+                    console.log("Contraseña incorrecta");
+                    res.status(401).send({msg: "Incorrecto"});
+                    return
                 }
                 const data = {
                     _id: usuario._id,
@@ -38,7 +41,7 @@ class userController{
                 }).then(tokenResponse => {
                     res.send({
                         token
-                    })
+                    });
                 })
             })
         })
