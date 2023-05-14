@@ -1,8 +1,15 @@
+.page{
+    background-color: rgb(217, 239, 239);
+    height: 90vh;
+}
+
 div .example-card{
     margin-top: 1%;
     margin-bottom: 1%;
     width: 25%;
     float: left;
+    height: 200px;
+    margin-left: 10px;
     border: solid 1px;
     border-color: black;
     box-sizing: border-box; 
@@ -25,6 +32,12 @@ div .example-card{
     margin-bottom: 1%;
 }
 
+.buttonStyle{
+    background-color: rgb(115, 121, 246);
+    margin-left: 10px;
+    color: white;
+}
+
 img{
     width: 50%;
     margin: auto;
@@ -32,4 +45,40 @@ img{
 
 .example-card{
     text-align: center;
+}
+
+@media screen and (max-width: 1023px){
+    div .example-card{
+        margin-top: 1%;
+        margin-bottom: 1%;
+        width: 33%;
+        float: left;
+        border: solid 1px;
+        border-color: black;
+        box-sizing: border-box; 
+      
+        &::after{
+          content: "";
+          display: table;
+          clear: both;
+        }
+    }
+}
+
+@media screen and (max-width: 767px){
+    div .example-card{
+        margin-top: 1%;
+        margin-bottom: 1%;
+        width: 48%;
+        float: left;
+        border: solid 1px;
+        border-color: black;
+        box-sizing: border-box; 
+      
+        &::after{
+          content: "";
+          display: table;
+          clear: both;
+        }
+    }
 }

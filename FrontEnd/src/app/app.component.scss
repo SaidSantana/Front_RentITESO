@@ -1,7 +1,12 @@
+*{
+  //background-color: rgb(217, 239, 239);
+  box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
-  }
+}
 
 div::after{
   content: "";

@@ -27,7 +27,8 @@ import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
 import { CreateEqComponent } from './pages/create_eq/create_eq.component';
 import { CreateEsComponent } from './pages/create_es/create_es.component';
 import { UpdateEqComponent } from './pages/update_eq/update_eq.component'
-import { UpdateEsComponent } from './pages/update_es/update_es.component'
+import { UpdateEsComponent } from './pages/update_es/update_es.component';
+import { ChatSupportComponent } from './pages/chat-support/chat-support.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { UpdateEsComponent } from './pages/update_es/update_es.component'
     CreateEqComponent,
     CreateEsComponent,
     UpdateEqComponent,
-    UpdateEsComponent
+    UpdateEsComponent,
+    ChatSupportComponent
   ],
   imports: [
     BrowserModule,
