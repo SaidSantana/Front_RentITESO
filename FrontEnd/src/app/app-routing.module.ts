@@ -18,12 +18,16 @@ import { UpdateEqComponent } from './pages/update_eq/update_eq.component';
 import { UpdateEsComponent } from './pages/update_es/update_es.component';
 import { ChatSupportComponent } from './pages/chat-support/chat-support.component';
 import { AdminsGuard } from './shared/guards/admins.guard';
+import { ReservarEqComponent } from './pages/reservar-eq/reservar-eq.component';
+import { ReservarEsComponent } from './pages/reservar-es/reservar-es.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
   { path: 'login', component: HomeLoginComponent, canActivate: [LoggedGuard]},
   { path: 'registro', component: RegistroComponent, canActivate: [LoggedGuard] },
   { path: 'equipo', component: EquipoComponent, canActivate: [AuthGuard]},
+  { path: 'reservar-eq/:id', component: ReservarEqComponent,  canActivate: [AuthGuard]},
+  { path: 'reservar-es/:id', component: ReservarEsComponent,  canActivate: [AuthGuard]},
   { path: 'crear_eq', component: CreateEqComponent,  canActivate: [AuthGuard]},
   { path: 'crear_es', component: CreateEsComponent,  canActivate: [AuthGuard]},
   { path: 'soporte', component: ChatSupportComponent, canActivate: [AuthGuard] },

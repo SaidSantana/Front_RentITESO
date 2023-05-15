@@ -1,0 +1,17 @@
+<h2>Reservación</h2>
+<div>
+<form (ngSubmit)="crearReserva()">
+  <!--<label>Nombre:</label>
+  <input type="text" [(ngModel)]="reserva.nombre" name="name" required> <br>-->
+
+  <label for="date" class="date-picker">Fecha:</label>
+  <input type="date" id="date" [(ngModel)]="reserva.fecha" name="date"><br>
+
+  <label for="time" class="time-picker">Hora:</label>
+  <input type="time" id="time" [(ngModel)]="reserva.hora" name="time"><br>
+
+  <label for="quantity">Cantidad:</label>
+  <input type="number" id="quantity" [(ngModel)]="reserva.cantidad" name="quantity"><br>
+  <button type="submit">Enviar</button>
+</form> 
+</div>

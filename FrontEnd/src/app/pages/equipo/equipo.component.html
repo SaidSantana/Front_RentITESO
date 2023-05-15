@@ -19,6 +19,7 @@
             data-id="{{ equipo._id }}">Eliminate</button>
           <button class="buttonStyle" mat-button *ngIf="user.rol==='Admin'"
             (click)="updateEquipo(equipo._id)">Update</button>
+          <button mat-button  (click)="reservaEquipo(equipo._id)">Reservar</button>
         </mat-card-actions>
       </mat-card>
     </div>
