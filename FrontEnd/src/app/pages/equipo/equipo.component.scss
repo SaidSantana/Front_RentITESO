@@ -3,12 +3,12 @@
     height: 90vh;
 }
 
-div .example-card{
+.section .example-card{
     margin-top: 1%;
     margin-bottom: 1%;
-    width: 25%;
+    width: 24%;
     float: left;
-    height: 200px;
+    height: 280px;
     margin-left: 10px;
     border: solid 1px;
     border-color: black;
@@ -19,6 +19,10 @@ div .example-card{
       display: table;
       clear: both;
     }
+}
+
+.section .example-card .card-header{
+    text-align: center;
 }
 
 .container::after{
@@ -39,12 +43,9 @@ div .example-card{
 }
 
 img{
-    width: 50%;
+    display: block;
+    width: 40%;
     margin: auto;
-}
-
-.example-card{
-    text-align: center;
 }
 
 @media screen and (max-width: 1023px){

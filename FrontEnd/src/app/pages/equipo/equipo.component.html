@@ -2,18 +2,18 @@
   <div class="container">
     <div *ngFor="let equipo of equipos" class="section">
       <mat-card class="example-card">
-        <mat-card-header>
+        <mat-card-header class="card-header">
           <div mat-card-avatar class="example-header-image"></div>
           <mat-card-title style="text-align: center;">{{equipo.nombre}}</mat-card-title>
           <mat-card-subtitle style="text-align: center;">{{equipo.status}}</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src="{{equipo.imagen}}" alt="img">
-        <mat-card-content>
+        <mat-card-content class="card-content">
+          <img mat-card-image src="{{equipo.imagen}}" alt="img">
           <p>
             Cantidad en stock: {{equipo.cantidad}}
           </p>
         </mat-card-content>
-        <mat-card-actions>
+        <mat-card-actions class="card-actions">
           <button class="buttonStyle" mat-button>LIKE</button>
           <button class="buttonStyle" mat-button *ngIf="user.rol==='Admin'" (click)="eliminarEquipo(equipo._id)"
             data-id="{{ equipo._id }}">Eliminate</button>
