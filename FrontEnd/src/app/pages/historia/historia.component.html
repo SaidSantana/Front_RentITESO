@@ -6,7 +6,7 @@
             <div mat-card-avatar class="example-header-image"></div>
             <mat-card-title style="text-align: center;">{{reserva.nombre}}</mat-card-title>
           </mat-card-header>
-          <img mat-card-image src="{{reserva.imagen}}" alt="img">
+          <img mat-card-image src="{{reserva.img}}" alt="img">
           <mat-card-content>
             <p>
               Fecha: {{reserva.fecha}}
@@ -15,7 +15,7 @@
             </p>
           </mat-card-content>
           <mat-card-actions>
-            <button class="buttonStyle" mat-button>Eliminate</button>
+            <button class="buttonStyle" mat-raised-button color="primary" (click)="deleteReserva(reserva)">Delete</button>
           </mat-card-actions>
         </mat-card>
       </div>

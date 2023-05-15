@@ -4,7 +4,6 @@ import { io } from 'socket.io-client';
 import jwtDecode from 'jwt-decode';
 import { UsersService } from 'src/app/shared/services/users.service';
 import { AuthService } from 'src/app/shared/services/auth.service';
-import { Token } from '@angular/compiler';
 import { User } from 'src/app/shared/Interface/user';
 
 @Component({

@@ -2,7 +2,7 @@ const Reserva = require('./../models/reserva');
 
 class ControladorReservas{
     static consultarId(req, res){
-        Reserva.find(req.params.id).lean()
+        Reserva.find({id_user: req.params.id}).lean()
             .then(espacio => {
                 res.send(espacio);
             })
@@ -31,7 +31,7 @@ class ControladorReservas{
     }
 
     static deleteReserva(req, res){
-        Reserva.findByIdAndDelete(req.params.id)
+        Reserva.findByIdAndDelete(req.params.id).lean()
             .then(reserva => {
                 res.send("Reserva " + reserva.nombre + "eliminado.");
             })

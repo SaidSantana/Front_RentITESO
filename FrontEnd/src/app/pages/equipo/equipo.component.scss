@@ -8,7 +8,7 @@
     margin-bottom: 1%;
     width: 24%;
     float: left;
-    height: 280px;
+    height: 310px;
     margin-left: 10px;
     border: solid 1px;
     border-color: black;
@@ -19,6 +19,14 @@
       display: table;
       clear: both;
     }
+}
+
+mat-card-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 40px;
+    //background-color: aqua;
 }
 
 .section .example-card .card-header{
@@ -49,10 +57,11 @@ img{
 }
 
 @media screen and (max-width: 1023px){
-    div .example-card{
+    .section .example-card{
         margin-top: 1%;
         margin-bottom: 1%;
         width: 33%;
+        min-height: 100px;
         float: left;
         border: solid 1px;
         border-color: black;
@@ -67,10 +76,11 @@ img{
 }
 
 @media screen and (max-width: 767px){
-    div .example-card{
+    .section .example-card{
         margin-top: 1%;
         margin-bottom: 1%;
         width: 48%;
+        height: 270px;
         float: left;
         border: solid 1px;
         border-color: black;
