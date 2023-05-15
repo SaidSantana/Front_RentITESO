@@ -53,7 +53,10 @@ export class EquipoComponent implements OnInit{
   eliminarEquipo(equipoId: string){
     this.equiposService.deleteEquipos(equipoId).subscribe(() => {
       this.equipos = this.equipos.filter(equipo => equipo._id !== equipoId);
-      location.reload();
+      window.location.reload();
+    },
+    (error) => {
+      window.location.reload();
     });
   }
 

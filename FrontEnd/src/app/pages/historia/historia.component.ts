@@ -43,7 +43,7 @@ export class HistoriaComponent implements OnInit {
     },
     (error) => {
       console.log(error);
-      this.router.navigate(['/espacios']);
+      window.location.reload();
     });
   }
 

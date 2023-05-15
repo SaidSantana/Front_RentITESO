@@ -52,7 +52,10 @@ export class EspaciosComponent implements OnInit {
   eliminarEspacio(espacioId: string) {
     this.espaciosService.deleteEspacios(espacioId).subscribe(() => {
       this.espacios = this.espacios.filter(espacio => espacio._id !== espacioId);
-      location.reload();
+      window.location.reload();
+    }, 
+    (error) => {
+      window.location.reload();
     });
   }
 
