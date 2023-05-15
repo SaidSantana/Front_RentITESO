@@ -34,7 +34,7 @@ const routes: Routes = [
   { path: 'actualizar_eq/:id', component: UpdateEqComponent, canActivate: [AuthGuard] },
   { path: 'actualizar_es/:id', component: UpdateEsComponent, canActivate: [AuthGuard] },
   { path: 'espacios', component: EspaciosComponent, canActivate: [AuthGuard] },
-  { path: 'historia', component: HistoriaComponent, canActivate: [AuthGuard]},
+  { path: 'reservas', component: HistoriaComponent, canActivate: [AuthGuard]},
   { path: 'perfil', component: ProfileComponent, canActivate: [AuthGuard]},
   { path: 'usuarios/registro', component: RegisterUserComponent, canActivate: [AuthGuard,AdminsGuard]},
   { path: 'usuarios', component: UsersComponent, canActivate: [AuthGuard,AdminsGuard]},

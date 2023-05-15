@@ -14,12 +14,11 @@
           </p>
         </mat-card-content>
         <mat-card-actions class="card-actions">
-          <button class="buttonStyle" mat-button>LIKE</button>
           <button class="buttonStyle" mat-button *ngIf="user.rol==='Admin'" (click)="eliminarEquipo(equipo._id)"
-            data-id="{{ equipo._id }}">Eliminate</button>
+            data-id="{{ equipo._id }}">Delete</button>
           <button class="buttonStyle" mat-button *ngIf="user.rol==='Admin'"
             (click)="updateEquipo(equipo._id)">Update</button>
-          <button mat-button  (click)="reservaEquipo(equipo._id)">Reservar</button>
+          <button mat-button  (click)="reservaEquipo(equipo._id)" *ngIf="user.rol==='Usuario'">Reservar</button>
         </mat-card-actions>
       </mat-card>
     </div>

@@ -8,7 +8,7 @@ div .example-card{
     margin-bottom: 1%;
     margin-left: 10px;
     width: 24%;
-    height: 250px;
+    height: 270px;
     float: left;
     border: solid 1px;
     border-color: black;
@@ -27,6 +27,14 @@ div .example-card{
     clear: both;
 }
 
+mat-card-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 40px;
+    //background-color: aqua;
+}
+
 .buttonStyle{
     background-color: rgb(115, 121, 246);
     margin-left: 10px;
@@ -43,6 +51,7 @@ div .example-card{
 
 img{
     width: 50%;
+    height: 50%;
     margin: auto;
 }
 
@@ -57,7 +66,7 @@ img{
         margin-bottom: 1%;
         margin-left: 10px;
         width: 33%;
-        height: 220px;
+        height: 250px;
         float: left;
         border: solid 1px;
         border-color: black;
@@ -77,7 +86,7 @@ img{
         margin-bottom: 1%;
         margin-left: 10px;
         width: 48%;
-        height: 220px;
+        height: 250px;
         float: left;
         border: solid 1px;
         border-color: black;
