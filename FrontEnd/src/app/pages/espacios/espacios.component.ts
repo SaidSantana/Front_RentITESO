@@ -59,4 +59,8 @@ export class EspaciosComponent implements OnInit {
   updateEspacio(id: number) {
     this.router.navigate(['/actualizar_es', id]);
   }
+
+  reservaEspacio(id: number) {
+    this.router.navigate(['/reservar-es', id]);
+  }
 }

@@ -17,6 +17,7 @@
                 <button class="buttonStyle" mat-button>LIKE</button>
                 <button class="buttonStyle" mat-button *ngIf="user.rol==='Admin'" (click)="eliminarEspacio(espacio._id)" data-id="{{ espacio._id }}" >Delete</button>
                 <button class="buttonStyle" mat-button *ngIf="user.rol==='Admin'" (click)="updateEspacio(espacio._id)">Update</button>
+                <button mat-button  (click)="reservaEspacio(espacio._id)">Reservar</button>
                 </mat-card-actions>
             </mat-card>
         </div>

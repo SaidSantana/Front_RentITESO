@@ -29,6 +29,8 @@ import { CreateEsComponent } from './pages/create_es/create_es.component';
 import { UpdateEqComponent } from './pages/update_eq/update_eq.component'
 import { UpdateEsComponent } from './pages/update_es/update_es.component';
 import { ChatSupportComponent } from './pages/chat-support/chat-support.component';
+import { ReservarEqComponent } from './pages/reservar-eq/reservar-eq.component';
+import { ReservarEsComponent } from './pages/reservar-es/reservar-es.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { ChatSupportComponent } from './pages/chat-support/chat-support.componen
     CreateEsComponent,
     UpdateEqComponent,
     UpdateEsComponent,
-    ChatSupportComponent
+    ChatSupportComponent,
+    ReservarEqComponent,
+    ReservarEsComponent
   ],
   imports: [
     BrowserModule,

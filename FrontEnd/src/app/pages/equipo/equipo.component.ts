@@ -61,5 +61,8 @@ export class EquipoComponent implements OnInit{
     this.router.navigate(['/actualizar_eq', id]);
   }
 
+  reservaEquipo(id: number) {
+    this.router.navigate(['/reservar-eq', id]);
+  }
 
 }
