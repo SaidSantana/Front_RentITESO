@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const usersController = require('./../controllers/usuarios');
+const usersController = require('../controllers/usuarios');
 
 /**
  * @swagger

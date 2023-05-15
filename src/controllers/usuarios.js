@@ -1,8 +1,8 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
-const Usuario = require('./../models/usuario');
-const Token = require('./../models/token');
+const Usuario = require('../models/usuario');
+const Token = require('../models/token');
 require('dotenv').config();
 
 const { OAuth2Client } = require('google-auth-library');
