@@ -22,7 +22,7 @@ export class CreateEsComponent {
   crearEspacio() {
     this.espaciosService.postEspacio(this.espacio).subscribe(
       res => {
-        this.router.navigate(['/espacio']);
+        this.router.navigate(['/espacios']);
       },
       err => {
         // hacer algo en caso de error
