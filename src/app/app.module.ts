@@ -75,7 +75,7 @@ import { ReservarEsComponent } from './pages/reservar-es/reservar-es.component';
           {
             id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(
-              '264879683267-spjp2jpn7vqorbodu9n6s7mjgf24rn7l.apps.googleusercontent.com'
+              '136831635040-2sn04l47jrar0hnu2pcd9agge7tghs6p.apps.googleusercontent.com'
             )
           }
         ],
