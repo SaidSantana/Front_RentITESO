@@ -1,0 +1,19 @@
+<div class="page">
+  <div class="title">
+    <h1 *ngIf="user.rol === 'Usuario'">Serás atendido pronto</h1>
+    <h1 *ngIf="user.rol === 'Admin'">Soporte</h1>
+  </div>
+  <div class="container">
+    <div class="messages">
+      <div [ngClass]="{'emisor': mensaje.emisor}" *ngFor="let mensaje of mensajes"> {{mensaje.mensaje}} </div>
+    </div>
+    <div>
+      <mat-form-field>
+        <div class="sendForm">
+          <input matInput type="text" [(ngModel)]="mensaje" (keyup.enter)="mensaje === '' ? nothing() : sendMessage()">
+        </div>
+      </mat-form-field>
+      <button mat-raised-button (click)="mensaje === '' ? nothing() : sendMessage()" style="margin-left: 5px">Enviar</button>
+    </div>
+  </div>
+</div>
